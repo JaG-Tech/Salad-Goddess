@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salad Goddess — Boynton Beach, FL</title>
+<meta name="description" content="Salad Goddess — fresh bowls, loaded potatoes, and wings in Boynton Beach, FL. Owned by Olynthia & Cynthia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --avocado: #2F4A2E;
+    --avocado-dark: #1D2E1C;
+    --lime: #8CB43A;
+    --mango: #F3B93B;
+    --chili: #D6552E;
+    --cream: #FBF5E7;
+    --paper: #FFFDF7;
+    --ink: #1C231A;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    background:
+      radial-gradient(circle at 12% 18%, rgba(140,180,58,0.35), transparent 45%),
+      radial-gradient(circle at 88% 82%, rgba(243,185,59,0.28), transparent 40%),
+      var(--avocado);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+    padding:56px 0 88px;
+  }
+
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:26px;
+    background:
+      linear-gradient(135deg, var(--cream) 25%, transparent 25%) 0 0,
+      linear-gradient(225deg, var(--cream) 25%, transparent 25%) 0 0;
+    background-size:26px 26px;
+    background-repeat:repeat-x;
+  }
+
+  .greeting{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--mango);
+    border:1px solid rgba(243,185,59,0.5);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+
+  .hero-title{
+    font-family:'Fredoka', sans-serif;
+    font-weight:700;
+    font-size:clamp(48px, 9vw, 96px);
+    line-height:0.95;
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+  }
+
+  .hero-title .goddess{
+    color:var(--mango);
+    display:block;
+  }
+
+  .hero-owners{
+    margin-top:22px;
+    font-family:'Space Mono', monospace;
+    font-size:15px;
+    letter-spacing:0.06em;
+    color:rgba(255,253,247,0.85);
+  }
+
+  .hero-owners span{color:var(--lime);}
+
+  .hero-meta{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 28px;
+    font-size:15px;
+  }
+
+  .hero-meta div{
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+
+  .hero-meta svg{flex:none; width:18px; height:18px; opacity:0.9;}
+
+  .hero-cta{
+    margin-top:38px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    padding:14px 26px;
+    border-radius:8px;
+    text-decoration:none;
+    border:2px solid transparent;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn:focus-visible{outline:3px solid var(--mango); outline-offset:2px;}
+
+  .btn-primary{
+    background:var(--mango);
+    color:var(--avocado-dark);
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,0.25);}
+
+  .btn-ghost{
+    border-color:rgba(255,253,247,0.4);
+    color:var(--paper);
+  }
+  .btn-ghost:hover{border-color:var(--paper); transform:translateY(-2px);}
+
+  /* ---------- SPECIAL TICKET ---------- */
+
+  .special-section{
+    margin-top:-56px;
+    padding-bottom:20px;
+    position:relative;
+    z-index:2;
+  }
+
+  .ticket{
+    background:var(--paper);
+    max-width:640px;
+    margin:0 auto;
+    border-radius:4px;
+    padding:30px 34px 34px;
+    transform:rotate(-1.3deg);
+    box-shadow:0 18px 40px rgba(29,46,28,0.28);
+    position:relative;
+  }
+
+  .ticket::before,
+  .ticket::after{
+    content:"";
+    position:absolute;
+    width:26px; height:26px;
+    background:var(--cream);
+    border-radius:50%;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .ticket::before{left:-13px;}
+  .ticket::after{right:-13px;}
+
+  .ticket-eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--chili);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .ticket-eyebrow::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:repeating-linear-gradient(to right, var(--ink) 0 6px, transparent 6px 11px);
+    opacity:0.35;
+  }
+
+  .ticket-title{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:26px;
+    margin-top:10px;
+    line-height:1.25;
+  }
+
+  .ticket-desc{
+    margin-top:10px;
+    font-size:15.5px;
+    line-height:1.55;
+    color:#3A423A;
+  }
+
+  .ticket-photo{
+    margin-top:18px;
+    aspect-ratio:16/9;
+    border-radius:6px;
+    overflow:hidden;
+    position:relative;
+    background:var(--cream);
+    border:1.5px dashed rgba(28,35,26,0.3);
+  }
+
+  .ticket-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .ticket-photo .photo-hint{
+    position:absolute; inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    font-family:'Space Mono', monospace;
+    font-size:11.5px;
+    color:#8A9186;
+    text-align:center;
+    padding:0 16px;
+  }
+
+  .ticket-photo .photo-hint svg{width:26px; height:26px; opacity:0.55;}
+
+  .ticket-price-row{
+    margin-top:18px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    border-top:1px dashed rgba(28,35,26,0.25);
+    padding-top:16px;
+  }
+
+  .ticket-price{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:34px;
+    color:var(--avocado);
+  }
+
+  .ticket-tag{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    background:var(--lime);
+    color:var(--avocado-dark);
+    padding:6px 12px;
+    border-radius:999px;
+  }
+
+  /* ---------- MENU ---------- */
+
+  .menu{
+    padding:96px 0 40px;
+  }
+
+  .menu-head{
+    text-align:center;
+    margin-bottom:50px;
+  }
+
+  .menu-eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--chili);
+  }
+
+  .menu-head h2{
+    font-family:'Fredoka', sans-serif;
+    font-weight:700;
+    font-size:clamp(32px, 5vw, 46px);
+    color:var(--avocado);
+    margin-top:8px;
+    text-transform:uppercase;
+  }
+
+  .menu-groups{
+    display:flex;
+    flex-direction:column;
+    gap:56px;
+  }
+
+  .menu-group-title{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:22px;
+    color:var(--chili);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+
+  .menu-group-title::after{
+    content:"";
+    flex:1;
+    height:2px;
+    background:repeating-linear-gradient(to right, var(--avocado) 0 8px, transparent 8px 15px);
+    opacity:0.35;
+  }
+
+  .menu-list{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:22px;
+  }
+
+  .menu-item{
+    background:var(--paper);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 6px 16px rgba(29,46,28,0.08);
+    border:1px solid rgba(47,74,46,0.08);
+  }
+
+  .menu-item-photo{
+    aspect-ratio:4/3;
+    position:relative;
+    background:linear-gradient(135deg, rgba(140,180,58,0.14), rgba(243,185,59,0.14));
+    border-bottom:1.5px dashed rgba(28,35,26,0.22);
+    overflow:hidden;
+  }
+
+  .menu-item-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .menu-item-photo .photo-hint{
+    position:absolute; inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    color:#7C8478;
+    text-align:center;
+    padding:0 14px;
+    line-height:1.5;
+  }
+
+  .menu-item-photo .photo-hint svg{width:22px; height:22px; opacity:0.5;}
+
+  .menu-item-body{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:10px;
+    padding:14px 16px;
+  }
+
+  .menu-item-name{
+    font-weight:600;
+    font-size:15.5px;
+    color:var(--ink);
+    line-height:1.35;
+  }
+
+  .menu-item-note{
+    font-size:12.5px;
+    color:#5C645A;
+    display:block;
+    margin-top:3px;
+    font-weight:400;
+  }
+
+  .menu-item-price{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:16px;
+    color:var(--avocado);
+    white-space:nowrap;
+    flex:none;
+  }
+
+  @media (max-width: 640px){
+    .menu-list{grid-template-columns:1fr 1fr;}
+  }
+
+  @media (max-width: 420px){
+    .menu-list{grid-template-columns:1fr;}
+  }
+
+  /* ---------- VISIT / FOOTER ---------- */
+
+  .visit{
+    background:var(--avocado-dark);
+    color:var(--paper);
+    margin-top:80px;
+    padding:64px 0 48px;
+  }
+
+  .visit-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    justify-content:space-between;
+    align-items:flex-start;
+  }
+
+  .visit h3{
+    font-family:'Fredoka', sans-serif;
+    font-size:28px;
+    color:var(--mango);
+    margin-bottom:14px;
+  }
+
+  .visit-details p{
+    font-size:15px;
+    line-height:1.9;
+    color:rgba(255,253,247,0.85);
+  }
+
+  .visit-details strong{color:var(--paper);}
+
+  .visit-cta{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-width:220px;
+  }
+
+  .footer-note{
+    margin-top:48px;
+    padding-top:24px;
+    border-top:1px solid rgba(255,253,247,0.15);
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.05em;
+    color:rgba(255,253,247,0.5);
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="greeting">Good Morning · Happy Sunday</span>
+    <h1 class="hero-title">
+      Salad
+      <span class="goddess">Goddess</span>
+    </h1>
+    <p class="hero-owners">Owned &amp; run by <span>Olynthia</span> &amp; <span>Cynthia</span></p>
+
+    <div class="hero-meta">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        317 NE 14th Ave, Boynton Beach, FL
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (561) 945-6002
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="tel:+15619456002">Call to order</a>
+      <a class="btn btn-ghost" href="#menu">See the menu</a>
+    </div>
+  </div>
+</header>
+
+<section class="special-section">
+  <div class="wrap">
+    <div class="ticket">
+      <div class="ticket-eyebrow">Today's Special</div>
+      <div class="ticket-title">Oxtail Plate</div>
+      <p class="ticket-desc">With black eyed peas, mac &amp; cheese, rice, candied yams, and cornbread.</p>
+
+      <div class="ticket-photo">
+        <img src="images/todays-special.jpg" alt="Today's special: oxtail plate"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="photo-hint" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+          Drop a photo in as<br><strong>images/todays-special.jpg</strong>
+        </div>
+      </div>
+      <div class="ticket-price-row">
+        <span class="ticket-price">$15</span>
+        <span class="ticket-tag">Sunday only</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="menu" id="menu">
+  <div class="wrap">
+    <div class="menu-head">
+      <div class="menu-eyebrow">The Full Menu</div>
+      <h2>Fresh Bowls &amp; Loaded Plates</h2>
+    </div>
+
+    <div class="menu-groups">
+
+      <div>
+        <h3 class="menu-group-title">Bowls &amp; Salads</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/spicy-bowl.jpg" alt="Spicy Bowl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/spicy-bowl.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">Spicy Bowl</span>
+              <span class="menu-item-price">$10</span>
+            </div>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/chef-salad.jpg" alt="Chef Salad" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/chef-salad.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">Chef Salad</span>
+              <span class="menu-item-price">$12</span>
+            </div>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/grilled-chicken.jpg" alt="Grilled Chicken" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/grilled-chicken.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">Grilled Chicken</span>
+              <span class="menu-item-price">$12</span>
+            </div>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/seafood-salad.jpg" alt="Seafood Salad" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/seafood-salad.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">Seafood Salad</span>
+              <span class="menu-item-price">$12</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="menu-group-title">Loaded Baked Potato</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/loaded-potato.jpg" alt="Loaded baked potato with shrimp, steak, or chicken" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/loaded-potato.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">Shrimp, Steak, or Chicken
+                <span class="menu-item-note">With broccoli, bacon &amp; cheese</span>
+              </span>
+              <span class="menu-item-price">$12</span>
+            </div>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/extra-meat.jpg" alt="Extra meat topping" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/extra-meat.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">Extra Meat</span>
+              <span class="menu-item-price">$3</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="menu-group-title">Wings</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/wings-fries.jpg" alt="Chicken wings with fries" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/wings-fries.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">6pc Wings + Fries</span>
+              <span class="menu-item-price">$10</span>
+            </div>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/wings-salad.jpg" alt="Chicken wings with salad" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/wings-salad.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">6pc Wings + Salad</span>
+              <span class="menu-item-price">$13.50</span>
+            </div>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/wings-fries.jpg" alt="Chicken wings with fries" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/wings-fries.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">10pc Wings + Fries</span>
+              <span class="menu-item-price">$16.50</span>
+            </div>
+          </li>
+          <li class="menu-item">
+            <div class="menu-item-photo">
+              <img src="images/wings-salad.jpg" alt="Chicken wings with salad" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="photo-hint" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="14" r="3.5"/></svg>
+                images/wings-salad.jpg
+              </div>
+            </div>
+            <div class="menu-item-body">
+              <span class="menu-item-name">10pc Wings + Salad</span>
+              <span class="menu-item-price">$18.50</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="visit">
+  <div class="wrap">
+    <div class="visit-grid">
+      <div class="visit-details">
+        <h3>Come see us</h3>
+        <p>
+          <strong>317 NE 14th Ave</strong><br>
+          Boynton Beach, FL<br>
+          <strong>(561) 945-6002</strong>
+        </p>
+      </div>
+      <div class="visit-cta">
+        <a class="btn btn-primary" href="tel:+15619456002">Call (561) 945-6002</a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=317+NE+14th+Ave+Boynton+Beach+FL" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <p class="footer-note">SALAD GODDESS · OLYNTHIA &amp; CYNTHIA · BOYNTON BEACH, FL</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
